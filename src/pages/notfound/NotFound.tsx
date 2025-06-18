@@ -6,7 +6,6 @@ export default function NotFound() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-surface p-4">
       <div className="text-center">
-        {/* شماره 404 با استایل خاص */}
         <h1 className="text-[120px] font-black text-primary/20 select-none">
           404
         </h1>
