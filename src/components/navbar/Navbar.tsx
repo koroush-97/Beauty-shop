@@ -54,16 +54,18 @@ export default function Navbar() {
           {/*----- user and login and shop------ */}
           <div className="bg-bg md:flex-1 flex-[0.5] flex-col rounded-[22px] h-30 z-20 lg:p-5  justify-center items-center ">
             <div className=" flex-1 flex flex-row md:justify-between gap-x-2 lg:gap-x-17 md:gap-x-2 -mt-3 pb-3">
-              <IconButton>
-                <div className="flex flex-row gap-2 m-2 justify-center items-center">
-                  {" "}
-                  <div className="p-1.5 rounded-lg bg-lightback ">
+              <Link to="/basket">
+                <IconButton>
+                  <div className="flex flex-row gap-2 m-2 justify-center items-center">
                     {" "}
-                    <FaBagShopping size={15} color="blue" />
+                    <div className="p-1.5 rounded-lg bg-lightback ">
+                      {" "}
+                      <FaBagShopping size={15} color="blue" />
+                    </div>
+                    <span className="text-[10px]">0</span>{" "}
                   </div>
-                  <span className="text-[10px]">0</span>{" "}
-                </div>
-              </IconButton>
+                </IconButton>
+              </Link>
               <IconButton>
                 <Link to="/login">
                   <div className="flex flex-row gap-2 m-2 justify-center items-center">
@@ -122,14 +124,17 @@ export default function Navbar() {
         {/* ---shop--- */}
         <div className="flex-1 flex justify-center items-center ">
           <IconButton>
-            <div className="flex flex-row gap-2 m-2 justify-center items-center">
+            <Link
+              to="/basket"
+              className="flex flex-row gap-2 m-2 justify-center items-center"
+            >
               {" "}
               <div className="p-1.5 rounded-lg bg-lightback">
                 {" "}
                 <FaBagShopping size={20} color="blue" />
               </div>
               <span className="text-[10px]">0</span>{" "}
-            </div>
+            </Link>
           </IconButton>
         </div>
         {/* ---logo--- */}
