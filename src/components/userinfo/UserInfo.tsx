@@ -41,7 +41,7 @@ export default function UserInfo() {
       <div className="rounded-2xl border border-border bg-bg p-4 md:p-5">
         <div className="flex flex-col sm:flex-row sm:items-center gap-5">
           <div className="relative w-fit">
-            <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-gradient-to-br from-yellow/30 via-secondary/40 to-primary/20 border-2 border-yellow flex items-center justify-center overflow-hidden">
+            <div className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-linear-to-br from-yellow/30 via-secondary/40 to-primary/20 border-2 border-yellow flex items-center justify-center overflow-hidden">
               <span className="font-heading text-3xl text-text">ک</span>
             </div>
 
