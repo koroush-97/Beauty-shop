@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "BZiba";
+  src: url("/fonts/B_Ziba.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "AridiKoufi";
+  src: url("/fonts/Mj_AridiKoufi.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
 /* 🎨 TAILWIND THEME TOKENS */
 @theme {
   --color-primary: #ec4899;
@@ -13,6 +27,9 @@
   --color-muted: #6b7280;
   --color-border: #e5e7eb;
   --color-hover: #fdf2f8;
+
+  --font-sans: "BZiba", system-ui, sans-serif;
+  --font-heading: "AridiKoufi", "BZiba", sans-serif;
 }
 
 /* 🌙 DARK THEME */
