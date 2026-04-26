@@ -1,76 +1,60 @@
 @import "tailwindcss";
 
-/* 🎨 DESIGN TOKENS */
-:root {
+/* 🎨 TAILWIND THEME TOKENS */
+@theme {
   --color-primary: #ec4899;
   --color-secondary: #f9a8d4;
-  --color-bg: #ffffff;
-  --color-surface: #f8fafc;
-  --color-text: #111827;
-  --color-muted: #6b7280;
   --color-accent: #a855f7;
 
-  /* optional UI improvements */
+  --color-bg: #ffffff;
+  --color-surface: #f8fafc;
+
+  --color-text: #111827;
+  --color-muted: #6b7280;
   --color-border: #e5e7eb;
   --color-hover: #fdf2f8;
 }
 
-/* 🌐 GLOBAL BASE STYLES */
-body {
-  background-color: var(--color-bg);
-  color: var(--color-text);
-  font-family: ui-sans-serif, system-ui;
+/* 🌙 DARK THEME */
+.dark {
+  --color-bg: #0f172a;
+  --color-surface: #1e293b;
+  --color-text: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-border: #334155;
+  --color-hover: #1e293b;
 }
 
-/* 🧱 SECTION BACKGROUND (like Beauty theme blocks) */
-section {
-  background-color: var(--color-bg);
+/* 🌐 GLOBAL BASE */
+@layer base {
+  body {
+    @apply bg-bg text-text font-sans;
+  }
+
+  section {
+    @apply bg-bg;
+  }
 }
 
-/* 🧾 CARDS (products, banners, etc.) */
-.card {
-  background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: 12px;
-  transition: all 0.2s ease;
-}
+/* 🧱 COMPONENTS */
+@layer components {
+  .card {
+    @apply bg-surface border border-border rounded-xl transition-all duration-200 hover:bg-hover hover:-translate-y-1;
+  }
 
-.card:hover {
-  background-color: var(--color-hover);
-  transform: translateY(-2px);
-}
+  .btn-primary {
+    @apply bg-primary text-white px-5 py-2.5 rounded-xl transition hover:opacity-90;
+  }
 
-/* 🔘 BUTTON PRIMARY (CTA مثل Shop Now) */
-.btn-primary {
-  background-color: var(--color-primary);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 10px;
-  transition: 0.2s;
-}
+  .btn-secondary {
+    @apply bg-secondary text-text px-5 py-2.5 rounded-xl;
+  }
 
-.btn-primary:hover {
-  background-color: #db2777;
-}
+  .text-muted {
+    @apply text-muted;
+  }
 
-/* 🔘 BUTTON SECONDARY */
-.btn-secondary {
-  background-color: var(--color-secondary);
-  color: var(--color-text);
-  padding: 10px 18px;
-  border-radius: 10px;
-}
-
-/* ✍️ MUTED TEXT */
-.text-muted {
-  color: var(--color-muted);
-}
-
-/* 🏷️ BADGE (discount, new, sale) */
-.badge {
-  background-color: var(--color-accent);
-  color: white;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 999px;
+  .badge {
+    @apply bg-accent text-white text-xs px-2 py-1 rounded-full;
+  }
 }
