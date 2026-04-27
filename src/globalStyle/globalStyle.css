@@ -25,6 +25,7 @@
 
   --color-text: #111827;
   --color-muted: #6b7280;
+  --color-lightback: #ebebeb;
   --color-border: #e5e7eb;
   --color-hover: #fdf2f8;
 
@@ -73,5 +74,29 @@
 
   .badge {
     @apply bg-accent text-white text-xs px-2 py-1 rounded-full;
+  }
+
+  .nav-link {
+    @apply text-muted;
+  }
+
+  .nav-link-active {
+    @apply text-text font-bold;
+  }
+}
+
+/* 📦 CONTAINER */
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+  width: 100%;
+  max-width: 1280px;
+
+  @media (width >= 640px) {
+    padding-inline: 1.5rem;
+  }
+
+  @media (width >= 1024px) {
+    padding-inline: 2rem;
   }
 }
