@@ -19,10 +19,10 @@
   --color-primary: #ec4899;
   --color-secondary: #f9a8d4;
   --color-accent: #a855f7;
-
+  --color-yellow: #fcbe13;
   --color-bg: #ffffff;
   --color-surface: #f8fafc;
-
+  --color-footer: #303030;
   --color-text: #111827;
   --color-muted: #6b7280;
   --color-lightback: #ebebeb;
@@ -51,6 +51,10 @@
 
   section {
     @apply bg-bg;
+  }
+
+  p {
+    @apply text-muted font-sans;
   }
 }
 
@@ -83,6 +87,10 @@
   .nav-link-active {
     @apply text-text font-bold;
   }
+
+  .navbar-orders {
+    @apply text-[14px] bg-bg;
+  }
 }
 
 /* 📦 CONTAINER */
@@ -90,7 +98,7 @@
   margin-inline: auto;
   padding-inline: 1rem;
   width: 100%;
-  max-width: 1280px;
+  max-width: 1400px;
 
   @media (width >= 640px) {
     padding-inline: 1.5rem;
