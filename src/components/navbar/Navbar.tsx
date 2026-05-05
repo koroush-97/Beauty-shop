@@ -12,16 +12,34 @@ import IconButton from "../buttons/iconBuuton/IconButton";
 import MegaMenuPanel from "../orderhero/MegaMenuPanel";
 
 // @ hooks
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 // @ Mock
 import orders from "../../mock/orders";
 
 export default function Navbar() {
   const [show, isShow] = useState(false);
+  const navbarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target as Node)
+      ) {
+        isShow(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   function showhandler() {
-    return isShow(!show);
+    return isShow((prev) => !prev);
   }
 
   return (
@@ -72,7 +90,7 @@ export default function Navbar() {
               <SearchBar />
             </div>
             <div className="flex-1 p-2  text-end justify-center items-center">
-              <NavLinks setshow={showhandler} />
+              <NavLinks setshow={showhandler} show={show} />
             </div>
           </div>
           {/* ----logo part----- */}
@@ -88,7 +106,13 @@ export default function Navbar() {
         </div>
       </div>
       {/* ---orders production parts */}
-      {show && <MegaMenuPanel order={orders} />}
+      <div
+        ref={navbarRef}
+        onMouseEnter={() => isShow(true)}
+        onMouseLeave={() => isShow(false)}
+      >
+        {show && <MegaMenuPanel order={orders} />}
+      </div>
 
       {/* -----mobile nav----- */}
       <div className="lg:hidden border p-1 flex flex-row justify-between md:justify-around">
