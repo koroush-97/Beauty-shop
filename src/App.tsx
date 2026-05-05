@@ -5,10 +5,12 @@ function App() {
   return (
     <div className="container ">
       <Navbar />
-      <main>
+      <main className="border border-red-500">
         <Outlet />
       </main>
-      <Footer />
+      <div className="pt-50">
+        <Footer />
+      </div>
     </div>
   );
 }
