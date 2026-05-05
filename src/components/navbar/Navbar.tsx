@@ -51,7 +51,7 @@ export default function Navbar() {
 
         <div className="  flex flex-row flex-1  gap-x-0 lg:gap-x-5 ">
           {/*----- user and login and shop------ */}
-          <div className="bg-bg md:flex-1 flex-[0.5] flex-col border  border-lightback rounded-[22px] h-30 z-20 lg:p-5  justify-center items-center ">
+          <div className="bg-bg md:flex-1 flex-[0.5] flex-col rounded-[22px] h-30 z-20 lg:p-5  justify-center items-center ">
             <div className=" flex-1 flex flex-row md:justify-between gap-x-2 lg:gap-x-17 md:gap-x-2 -mt-3 pb-3">
               <IconButton>
                 <div className="flex flex-row gap-2 m-2 justify-center items-center">
@@ -85,7 +85,7 @@ export default function Navbar() {
             </div>
           </div>
           {/* ----main and searchBar----- */}
-          <div className=" bg-bg  md:flex-2  flex-2 flex flex-col border border-lightback rounded-[22px] p-2  justify-center items-end">
+          <div className=" bg-bg  md:flex-2  flex-2 flex flex-col  rounded-[22px] p-2  justify-center items-end">
             <div className="flex-1  w-[80%] text-end justify-end items-center mt-2">
               <SearchBar />
             </div>
