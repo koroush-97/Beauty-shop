@@ -1,6 +1,6 @@
 type titleItemProps = {
   //   children: React.ReactNode;
-  header?: string;
+  header?: React.ReactNode;
   content?: string;
   icon?: React.ReactNode;
 };
