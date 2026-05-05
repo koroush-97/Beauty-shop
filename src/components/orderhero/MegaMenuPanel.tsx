@@ -66,7 +66,7 @@ export default function MegaMenuPanel({ order }: MegaMenuPanelProps) {
   const hasBlocks = blocks.length > 0;
 
   return (
-    <div className="hidden lg:flex flex-row absolute w-[85%] h-auto  shadow-[0_8px_24px_-6px_rgba(0,0,0,0.80)] mt-5 left-30 z-20 bg-bg rounded-xl ">
+    <div className="hidden lg:flex flex-row absolute w-[85%] h-auto  shadow-[0_8px_24px_-6px_rgba(0,0,0,0.80)]  left-30 z-20 bg-bg rounded-xl ">
       <div dir="rtl" className="flex-1 flex gap-10">
         {hasBlocks
           ? columns.map((column, colIndex) => (
