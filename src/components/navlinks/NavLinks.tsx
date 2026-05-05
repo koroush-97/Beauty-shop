@@ -2,10 +2,15 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 
 type NavLinksProps = {
-  setshow: () => void;
+  show: boolean;
+  setshow: (value: boolean) => void;
 };
 
-export default function NavLinks({ setshow }: NavLinksProps) {
+export default function NavLinks({ setshow, show }: NavLinksProps) {
+  function mouseEnterhandler() {
+    return setshow(true);
+  }
+
   return (
     <ul className="flex flex-row-reverse p-2 lg:gap-x-5  text-[10px] lg:text-[14px] flex-wrap gap-y-2">
       <li>
@@ -19,8 +24,18 @@ export default function NavLinks({ setshow }: NavLinksProps) {
         </NavLink>
       </li>
 
-      <li className="hover:font-bold  flex flex-row" onClick={setshow}>
-        <div className="nav-link cursor-pointer hover:text-text flex flex-row justify-center items-center">
+      <li
+        className="hover:font-bold  flex flex-row"
+        onMouseEnter={mouseEnterhandler}
+        // onMouseLeave={mouseleavehandler}
+      >
+        <div
+          className={
+            show
+              ? "nav-link nav-link-active cursor-pointer flex flex-row justify-center items-center"
+              : "nav-link cursor-pointer flex flex-row justify-center items-center"
+          }
+        >
           <span className="pt-1.5">
             <IoMdArrowDropdown />
           </span>
