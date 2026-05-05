@@ -32,8 +32,8 @@ export default function Footer() {
               <img src={logo} alt="logo" />
             </div>
           </div>
-          <div className=" w-full text-right pb-5 border-b border-muted ">
-            <p className=" md:text-center ">
+          <div className=" w-full text-right pb-5 border-b border-muted">
+            <p dir="rtl" className=" text-justify md:text-center">
               فروشگاه بیوتی استایل ما با هدف ارائه محصولات باکیفیت و اورجینال در
               حوزه پوشاک تاسیس شده است. ما به دنبال ایجاد تجربه‌ای دلپذیر و
               رضایت‌بخش برای مشتریان خود هستیم، و با ارائه محصولاتی از برندهای
@@ -52,7 +52,7 @@ export default function Footer() {
                 </div>
               </div>
               <div className=" w-full text-right pb-5  ">
-                <p className=" md:text-center ">
+                <p dir="rtl" className=" md:text-justify ">
                   فروشگاه بیوتی استایل ما با هدف ارائه محصولات باکیفیت و
                   اورجینال در حوزه پوشاک تاسیس شده است. ما به دنبال ایجاد
                   تجربه‌ای دلپذیر و رضایت‌بخش برای مشتریان خود هستیم، و با ارائه
