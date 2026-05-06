@@ -14,17 +14,19 @@ export default function FeatureBox({
   description,
   image,
   width = "100%",
-  height = "auto",
+  height = "100%",
 }: FeatureBoxProps) {
   return (
-    <div className="flex p-1 gap-x-1" style={{ width, height }}>
+    <div className="flex p-1 gap-x-1 py-5" style={{ width, height }}>
       {/* Text Section */}
       <div
         dir="rtl"
         className="p-2 flex flex-col flex-[2/3] w-[70%] justify-center items-center"
       >
-        <h3 className="lg:text-[16px] font-semibold">{title}</h3>
-        <p className="text-[12px]">{description}</p>
+        <h3 className="lg:text-[14px] font-semibold ">{title}</h3>
+        <p className="text-[10px] md:text-[11px] lg:text-[12px] ">
+          {description}
+        </p>
       </div>
 
       {/* Icon Section */}
