@@ -91,6 +91,27 @@
   .navbar-orders {
     @apply text-[14px] bg-bg;
   }
+
+  .swiper-pagination-bullet {
+    @apply bg-transparent opacity-100 m-0 p-0 shadow-none;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* فاصله بین لوزی‌ها */
+  .swiper-pagination {
+    @apply flex gap-4  w-full  justify-center;
+  }
+
+  /* span بولت ما */
+  .custom-bullet {
+    @apply inline-flex cursor-pointer transition-all duration-300 outline-none focus:outline-none;
+  }
+
+  /* حالت active */
+  .swiper-pagination-bullet-active .w-12\.5 {
+    transform: scale(1.25);
+  }
 }
 
 /* 📦 CONTAINER */
