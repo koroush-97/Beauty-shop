@@ -1,13 +1,20 @@
 // @components
 import WrappernBox from "../../components/wrappernBox/WrappernBox";
 import HeroSection from "../../components/hreo/HeroSection";
-
+import CategoryCard from "../../components/categoryCard/CategoryCard";
 import hour24 from "../../assets/photo/svgs/24.svg";
 import FeatureBox from "../../components/featureBox/FeatureBox";
+import TitleItem from "../../components/titleItem/TitleItem";
+import NewProductCard from "../../components/newProductCard/NewProductCard";
+
 // @ photos and svgs
 import bagsup from "../../assets/photo/svgs/bagsupport.svg";
 import truck from "../../assets/photo/svgs/truck.svg";
 import earth from "../../assets/photo/svgs/earth.svg";
+import Tshirtman from "../../assets/photo/topWeekSell/nh8329_1_.jpg";
+import jeanlow from "../../assets/photo/topWeekSell/jean-low.jpg";
+import scarf from "../../assets/photo/topWeekSell/scarf.jpg";
+import maleShrt from "../../assets/photo/topWeekSell/Tshirt-2.jpg";
 import flowerRight from "../../assets/photo/svgs/yellow-right.svg";
 import flowerLeft from "../../assets/photo/svgs/yellow-left.svg";
 import WomenClothe from "../../assets/photo/carts/clothes-w-.png";
@@ -15,8 +22,12 @@ import maleClothe from "../../assets/photo/carts/clothes-Men.png";
 import kids from "../../assets/photo/carts/Kids-Icon.png";
 import sport from "../../assets/photo/carts/Sport_Travel-Icon.png";
 import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
-
-import CategoryCard from "../../components/categoryCard/CategoryCard";
+import offer from "../../assets/photo/topWeekSell/offer-2.png";
+import yelloleft from "../../assets/photo/svgs/yellow-left.svg";
+import yelloright from "../../assets/photo/svgs/yellow-right.svg";
+import logoParaph from "../../assets/photo/logo-beauty-paragheraph.png";
+import short from "../../assets/photo/topWeekSell/jean-low.jpg";
+// @ react-router-dom
 import { Link } from "react-router-dom";
 
 function HomePage() {
@@ -27,10 +38,11 @@ function HomePage() {
         <HeroSection classname="p-2  h-70 md:h-150 " />
       </div>
 
-      <div className="patronage-part my-25 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-2 gap-x-5 gap-y-2">
+      <div className="patronage-section my-25 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-2 gap-x-5 gap-y-2">
         <div className="h-full">
           <WrappernBox classname="h-full">
             <FeatureBox
+              variant="info"
               title="پشتیبانی 24 ساعته"
               description="برای تمامی سفارشات"
               image={hour24}
@@ -40,6 +52,7 @@ function HomePage() {
         <div className="h-full">
           <WrappernBox classname="h-full">
             <FeatureBox
+              variant="info"
               description="همکاری با برندهای مختلف"
               image={bagsup}
               title=" تنوع محصولات"
@@ -49,6 +62,7 @@ function HomePage() {
         <div className="h-full">
           <WrappernBox classname="h-full">
             <FeatureBox
+              variant="info"
               description="برای تمامی سفارشات"
               image={truck}
               title="ارسال رایگان"
@@ -58,6 +72,7 @@ function HomePage() {
         <div className="h-full">
           <WrappernBox classname="h-full">
             <FeatureBox
+              variant="info"
               description="از نزدیک ترین تا دور ترین"
               image={earth}
               title="ارسال به تمامی نقاط کشور"
@@ -66,7 +81,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="CategorySection relative  min-h-87.5 md:h-auto z-0  flex justify-center items-center">
+      <div className="Category-Section relative  min-h-87.5 md:h-auto z-0  flex justify-center items-center my-25">
         {/* ---layer---- */}
         <div className=" underlayer  bg-lightback md:bg-white absolute -top-5 -bottom-5 right-[20%] left-[20%] md:bottom-0 md:top-0  md:right-0 md:left-0 -z-10 grid grid-cols-1 md:grid-cols-6  rounded-2xl ">
           <div className=" relative ">
@@ -178,7 +193,226 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="test-final mt-50 border border-black">content</div>
+      <div className=" topWeekly-Products-Section relative flex   min-h-87.5 w-full z-0 my-25 px-2">
+        {/* ---overlay--- */}
+        <div className=" absolute z-10 top-0 right-0 bottom-0 left-0 grid grid-cols-1 md:grid-cols-4">
+          <div className=" bg-yellow rounded-2xl   p-2  md:bg-lightback h-[60%] md:w-[80%]  lg:w-[60%] md:h-full"></div>
+          <div className=""></div>
+          <div className=""></div>
+          <div className=" bg-lightback rounded-2xl p-5 md:bg-[#0f1271]  h-[60%] md:h-full md:w-[80%] md:ml-[20%]  lg:w-[60%] lg:ml-[40%] "></div>
+        </div>
+        {/* ---content---- */}
+        <div className=" relative px-2 flex-1  z-50  grid grid-cols-1 lg:grid-cols-[3fr_1fr]  lg:gap-x-2 gap-y-2">
+          {/* ---پرفروش هفته */}
+          <div className="  min-h-30  lg:hidden relative px-2   ">
+            <div className="flex  flex-row   absolute -top-8 bottom-5 right-0 left-0 z-50 rounded-2xl bg-bg ">
+              <div className=" flex-1 flex flex-col items-center  justify-center">
+                <h3
+                  dir="rtl"
+                  className="w-full font-semibold pr-2 flex flex-row gap-x-2"
+                >
+                  <span className="hidden md:flex">
+                    <img src={yelloleft} alt="" />
+                  </span>
+                  پرفروش <br className="md:hidden" />
+                  های <br className="md:hidden" /> هفته
+                  <span className="hidden md:flex">
+                    <img src={yelloright} alt="" />
+                  </span>
+                </h3>
+                <p dir="rtl" className="text-[12px]  w-full pr-2">
+                  Weekly <br className="md:hidden" /> Most{" "}
+                  <br className="md:hidden" /> Sells
+                </p>
+              </div>
+              <div className=" relative flex-1 ">
+                <img
+                  src={offer}
+                  alt="offer-logo"
+                  className="object-contain absolute left-2 top-5"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="newrule gap-y-1 lg:p-2 grid grid-cols-1 md:grid-cols-2  lg:gap-x-4">
+            <div className="h-full">
+              {" "}
+              <WrappernBox classname="bg-bg h-full">
+                <FeatureBox
+                  variant="productAction"
+                  image={Tshirtman}
+                  title="تی شرت مردانه مشکی آر ان اس"
+                  description={
+                    <div className="flex flex-col gap-y-2">
+                      <span className="text-[14px] line-through text-muted">
+                        230,000 تومان
+                      </span>
+                      <h6 className="text-[20px]">150,000</h6>
+                    </div>
+                  }
+                  buttoncolor="yellow"
+                />
+              </WrappernBox>{" "}
+            </div>
+            <div className="h-full">
+              {" "}
+              <WrappernBox classname="bg-bg h-full">
+                <FeatureBox
+                  variant="productAction"
+                  image={maleShrt}
+                  title="تی شرت مردانه j - snrt"
+                  description={
+                    <div className="flex flex-col gap-y-2">
+                      <span className="text-[14px] line-through text-muted">
+                        230,000 تومان
+                      </span>
+                      <h6 className="text-[20px]">150,000</h6>
+                    </div>
+                  }
+                  buttoncolor="blue"
+                />
+              </WrappernBox>{" "}
+            </div>
+            <div className="h-full">
+              <WrappernBox classname="bg-bg h-full">
+                <FeatureBox
+                  variant="productAction"
+                  image={jeanlow}
+                  title="شلوارک خانگی RT-150"
+                  description={
+                    <div className="flex flex-col gap-y-2">
+                      <span className="text-[14px] line-through text-muted">
+                        230,000 تومان
+                      </span>
+                      <h6 className="text-[20px]">150,000</h6>
+                    </div>
+                  }
+                  buttoncolor="blue"
+                />
+              </WrappernBox>{" "}
+            </div>
+            <div className="h-full">
+              <WrappernBox classname="bg-bg h-full">
+                <FeatureBox
+                  variant="productAction"
+                  image={scarf}
+                  title="مینی اسکارف زنانه ابریشم توپیل"
+                  description={
+                    <div className="flex flex-col gap-y-2">
+                      <span className="text-[14px] line-through text-muted">
+                        230,000 تومان
+                      </span>
+                      <h6 className="text-[20px]">150,000</h6>
+                    </div>
+                  }
+                  buttoncolor="yellow"
+                />
+              </WrappernBox>{" "}
+            </div>
+          </div>
+          {/* ---پرفروش هفته */}
+          <div className="  min-h-30 hidden lg:flex relative px-2   ">
+            <div className="flex  flex-col   absolute top-[20%] bottom-[20%] right-0 left-0 z-50 rounded-2xl bg-bg ">
+              <div className=" relative flex-1 flex justify-center items-center p-2">
+                <img
+                  src={offer}
+                  alt="offer-logo"
+                  className="object-contain  "
+                />
+              </div>
+              <div className=" flex-1 flex flex-col justify-center items-center">
+                <h3 className=" gap-x-2  text-center w-full font-semibold flex flex-row justify-center items-center">
+                  <span className="hidden md:flex">
+                    <img src={yelloright} alt="" />
+                  </span>
+                  پرفروش های هفته
+                  <span className="hidden md:flex">
+                    <img src={yelloleft} alt="" />
+                  </span>
+                </h3>
+                <p className=" text-center text-[12px]  w-full ">
+                  Weekly Most Sells
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* <TopWeeklyProducts /> */}
+      </div>
+
+      <div className="new-products border min-h-87.5 grid-cols-1">
+        <div className="grid md:grid-cols-[1fr_4fr]  lg:grid-cols-[1fr_5fr] ">
+          <div className=" hidden p-1 md:flex  justify-center items-center  bg-bg rounded-2xl">
+            <div className="border  p-1 lg:p-2 w-full border-lightback grid grid-cols-[1fr_2fr] flex-col justify-center items-center h-full rounded-2xl hover:bg-lightback cursor-pointer">
+              <div className="w-full flex justify-end pl-2 ">
+                <LiaLongArrowAltLeftSolid size={20} />
+              </div>
+              <h3 dir="rtl" className=" text-[14px] p-1 lg:text-xl ">
+                مشاهده همه
+              </h3>
+            </div>
+          </div>
+          <div className="  flex justify-center items-center max-h-25 md:justify-end">
+            <TitleItem
+              classname=" grid grid-cols-[2fr_1fr] h-full "
+              containerText=" flex flex-col justify-center items-center md:justify-center "
+              header={
+                <h3 className="text-black font-semibold">جدیدترین محصولات</h3>
+              }
+              content={
+                <p dir="rtl" className="text-[12px]  pl-10">
+                  Newest Products
+                </p>
+              }
+              icon={
+                <div className="pr-5 h-10 flex items-center">
+                  <img
+                    src={logoParaph}
+                    alt="logo"
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
+              }
+            />
+          </div>
+        </div>
+        <div className="bg-cyan-500 h-auto">{/* <NewProductCard /> */}</div>
+        <div className="flex md:hidden ">
+          <div className="   md:flex justify-center items-center  bg-bg rounded-2xl">
+            <div className="border border-lightback grid grid-cols-[1fr_2fr]  p-4  justify-center items-center h-full rounded-2xl hover:bg-lightback cursor-pointer">
+              <div className="w-full flex justify- pl-2 ">
+                <LiaLongArrowAltLeftSolid size={15} />
+              </div>
+              <h3 className="text-[15px]  font-bold  ">مشاهده همه</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="test-final mt-50 border border-black grid grid-cols-2">
+        <div>
+          <NewProductCard
+            subjectbrand="کودک و نوجوان"
+            offer={8}
+            imgsrc={short}
+            headers={
+              <p className="text-[14px]">
+                <span className="font-semibold text-muted">
+                  شومیز زنانه کتان آماهی
+                </span>{" "}
+                <br /> <span>Amahi AU2883</span>
+              </p>
+            }
+            price={
+              <h3 dir="rtl" className="font-semibold">
+                250,000 تومان
+              </h3>
+            }
+            button={<button>btn</button>}
+          />
+        </div>
+        <div className=""></div>
+      </div>
     </section>
   );
 }
