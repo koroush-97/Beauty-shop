@@ -1,24 +1,26 @@
 type titleItemProps = {
-  //   children: React.ReactNode;
   header?: React.ReactNode;
-  content?: string;
-  icon?: React.ReactNode;
+  content?: string | React.ReactNode;
+  icon?: React.ReactNode | string;
+  classname?: string;
+  containerText?: string;
 };
 
 export default function TitleItem({
-  //   children,
   header,
   content,
   icon,
+  classname = "flex flex-row gap-x-1",
+  containerText = "flex flex-col justify-end text-right",
 }: titleItemProps) {
   return (
-    <div className="flex flex-row gap-x-1">
-      <div className=" flex flex-col justify-end text-right">
+    <div className={` ${classname}`}>
+      <div className={`${containerText}`}>
         <h1 className="font-bold text-bg">{header}</h1>
-        <p className=" text-sm">{content}</p>
+        <div className=" text-sm">{content}</div>
       </div>
       <div className=" flex justify-center items-center">
-        <span>{icon}</span>
+        <div>{icon}</div>
       </div>
     </div>
   );
