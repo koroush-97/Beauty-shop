@@ -1,6 +1,8 @@
 // @ component
 import WrappernBox from "../wrappernBox/WrappernBox";
 import OfferNote from "../../components/offerNote/OfferNote";
+import { Link } from "react-router-dom";
+
 type newProductCard = {
   subjectbrand?: string;
   offer?: number;
@@ -21,21 +23,27 @@ export default function NewProductCard({
   return (
     <WrappernBox classname="h-full">
       <div className="cursor-pointer flex flex-col h-full ">
-        <div className="relative h-50  w-full">
+        <div className="relative h-[65%]  w-full border border-lightback rounded-2xl">
           <img
             src={imgsrc}
             alt="product-img"
             className="w-full h-full object-contain"
           />
           <div className="absolute top-0 right-0 left-0 p-1 z-50">
-            <div className="grid grid-cols-2">
+            <div className="grid grid-cols-2  ">
               <OfferNote num={offer} />
               <div dir="rtl" className="flex items-center px-2 ">
-                {subjectbrand && (
-                  <p className=" flex justify-center items-center rounded-lg bg-lightback text-[14px] px-2 py-1">
+                <Link
+                  to="#"
+                  className="relative mx-2 flex w-30 items-center justify-center overflow-hidden text-nowrap text-[14px] text-white cursor-pointer md:w-40 md:text-[16px] md:font-semibold lg:w-48"
+                >
+                  <span className="pointer-events-none absolute inset-0 z-20 rounded-sm bg-black/20"></span>
+                  <p
+                    className={`${subjectbrand ? "text-black font-semibold z-30 p-1" : ""}`}
+                  >
                     {subjectbrand}
                   </p>
-                )}
+                </Link>
               </div>
             </div>
           </div>
