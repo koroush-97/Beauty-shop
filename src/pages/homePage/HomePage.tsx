@@ -6,6 +6,7 @@ import hour24 from "../../assets/photo/svgs/24.svg";
 import FeatureBox from "../../components/featureBox/FeatureBox";
 import TitleItem from "../../components/titleItem/TitleItem";
 import NewProductCard from "../../components/newProductCard/NewProductCard";
+import MainBtn from "../../components/buttons/mainBtn/MainBtn";
 
 // @ photos and svgs
 import bagsup from "../../assets/photo/svgs/bagsupport.svg";
@@ -341,7 +342,7 @@ function HomePage() {
       </div>
 
       <div className="new-products border min-h-87.5 grid-cols-1">
-        <div className="grid md:grid-cols-[1fr_4fr]  lg:grid-cols-[1fr_5fr] ">
+        <div className="grid md:grid-cols-[1fr_4fr]  lg:grid-cols-[1fr_5fr] py-2">
           <div className=" hidden p-1 md:flex  justify-center items-center  bg-bg rounded-2xl">
             <div className="border  p-1 lg:p-2 w-full border-lightback grid grid-cols-[1fr_2fr] flex-col justify-center items-center h-full rounded-2xl hover:bg-lightback cursor-pointer">
               <div className="w-full flex justify-end pl-2 ">
@@ -376,8 +377,32 @@ function HomePage() {
             />
           </div>
         </div>
-        <div className="bg-cyan-500 h-auto">{/* <NewProductCard /> */}</div>
-        <div className="flex md:hidden ">
+        {/* ----swiper---- */}
+        <div className="bg-cyan-500 h-80 py-1">
+          <div className="max-w-90 h-full bg-bg rounded-2xl">
+            <NewProductCard
+              subjectbrand="کودک و نوجوان"
+              offer={8}
+              imgsrc={short}
+              headers={
+                <p className="text-[14px]">
+                  <span className="font-semibold text-muted">
+                    شلوارک مردانه
+                  </span>{" "}
+                  <br className=" flex md:hidden" /> <span>Amahi AU2883</span>
+                </p>
+              }
+              price={
+                <h3 dir="rtl" className="font-semibold">
+                  250,000 تومان
+                </h3>
+              }
+              button={<MainBtn text="افزودن به سبد خرید" />}
+            />
+          </div>
+        </div>
+        {/* ----swiper---- */}
+        <div className="flex md:hidden py-1">
           <div className="   md:flex justify-center items-center  bg-bg rounded-2xl">
             <div className="border border-lightback grid grid-cols-[1fr_2fr]  p-4  justify-center items-center h-full rounded-2xl hover:bg-lightback cursor-pointer">
               <div className="w-full flex justify- pl-2 ">
@@ -389,30 +414,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="test-final mt-50 border border-black grid grid-cols-2">
-        <div>
-          <NewProductCard
-            subjectbrand="کودک و نوجوان"
-            offer={8}
-            imgsrc={short}
-            headers={
-              <p className="text-[14px]">
-                <span className="font-semibold text-muted">
-                  شومیز زنانه کتان آماهی
-                </span>{" "}
-                <br /> <span>Amahi AU2883</span>
-              </p>
-            }
-            price={
-              <h3 dir="rtl" className="font-semibold">
-                250,000 تومان
-              </h3>
-            }
-            button={<button>btn</button>}
-          />
-        </div>
-        <div className=""></div>
-      </div>
+      <div className="test-final mt-50  grid grid-cols-1"></div>
     </section>
   );
 }
