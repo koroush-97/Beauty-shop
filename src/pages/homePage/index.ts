@@ -1,9 +1,5 @@
 // components
-export { default as WrappernBox } from "../../components/wrappernBox/WrappernBox";
-export { default as HeroSection } from "../../components/hreo/HeroSection";
-export { default as CategoryCard } from "../../components/categoryCard/CategoryCard";
-export { default as FeatureBox } from "../../components/featureBox/FeatureBox";
-export { default as TitleItem } from "../../components/titleItem/TitleItem";
+export * from "../../components";
 
 // assets
 export { default as hour24 } from "../../assets/photo/svgs/24.svg";
