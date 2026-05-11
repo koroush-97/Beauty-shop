@@ -1,39 +1,38 @@
-// @components
-import WrappernBox from "../../components/wrappernBox/WrappernBox";
-import HeroSection from "../../components/hreo/HeroSection";
-import CategoryCard from "../../components/categoryCard/CategoryCard";
-import hour24 from "../../assets/photo/svgs/24.svg";
-import FeatureBox from "../../components/featureBox/FeatureBox";
-import TitleItem from "../../components/titleItem/TitleItem";
-import NewProductCard from "../../components/newProductCard/NewProductCard";
-import MainBtn from "../../components/buttons/mainBtn/MainBtn";
+import {
+  NewProductsSwiper,
+  WrappernBox,
+  HeroSection,
+  CategoryCard,
+  FeatureBox,
+  TitleItem,
+  hour24,
+  bagsup,
+  truck,
+  earth,
+  Tshirtman,
+  jeanlow,
+  scarf,
+  maleShrt,
+  flowerRight,
+  flowerLeft,
+  WomenClothe,
+  maleClothe,
+  kids,
+  sport,
+  LiaLongArrowAltLeftSolid,
+  offer,
+  yelloleft,
+  yelloright,
+  logoParaph,
+  Link,
+  Bestcategories,
+} from "./index";
 
-// @ photos and svgs
-import bagsup from "../../assets/photo/svgs/bagsupport.svg";
-import truck from "../../assets/photo/svgs/truck.svg";
-import earth from "../../assets/photo/svgs/earth.svg";
-import Tshirtman from "../../assets/photo/topWeekSell/nh8329_1_.jpg";
-import jeanlow from "../../assets/photo/topWeekSell/jean-low.jpg";
-import scarf from "../../assets/photo/topWeekSell/scarf.jpg";
-import maleShrt from "../../assets/photo/topWeekSell/Tshirt-2.jpg";
-import flowerRight from "../../assets/photo/svgs/yellow-right.svg";
-import flowerLeft from "../../assets/photo/svgs/yellow-left.svg";
-import WomenClothe from "../../assets/photo/carts/clothes-w-.png";
-import maleClothe from "../../assets/photo/carts/clothes-Men.png";
-import kids from "../../assets/photo/carts/Kids-Icon.png";
-import sport from "../../assets/photo/carts/Sport_Travel-Icon.png";
-import { LiaLongArrowAltLeftSolid } from "react-icons/lia";
-import offer from "../../assets/photo/topWeekSell/offer-2.png";
-import yelloleft from "../../assets/photo/svgs/yellow-left.svg";
-import yelloright from "../../assets/photo/svgs/yellow-right.svg";
-import logoParaph from "../../assets/photo/logo-beauty-paragheraph.png";
-import short from "../../assets/photo/topWeekSell/jean-low.jpg";
-// @ react-router-dom
-import { Link } from "react-router-dom";
+import offerzang from "../../assets/photo/offer-section/zangoleh.png";
 
 function HomePage() {
   return (
-    <section className="relative  main-section h-auto py-2 ">
+    <section className="relative  main-section h-auto py-2 z-0 ">
       <div className="hero-section relative">
         <div className=" absolute w-8 h-8 md:w-10 md:h-10  border-5 border-white rotate-135 rounded-tl-2xl rounded-br-2xl top-28 -right-1.5 bg-[#0f1273] z-50 md:top-65 md:-right-3.5 "></div>{" "}
         <HeroSection classname="p-2  h-70 md:h-150 " />
@@ -194,7 +193,7 @@ function HomePage() {
         </div>
       </div>
 
-      <div className=" topWeekly-Products-Section relative flex   min-h-87.5 w-full z-0 my-25 px-2">
+      <div className=" topWeekly-Products-Section relative flex min-h-87.5 w-full z-0 my-25 px-2">
         {/* ---overlay--- */}
         <div className=" absolute z-10 top-0 right-0 bottom-0 left-0 grid grid-cols-1 md:grid-cols-4">
           <div className=" bg-yellow rounded-2xl   p-2  md:bg-lightback h-[60%] md:w-[80%]  lg:w-[60%] md:h-full"></div>
@@ -341,7 +340,7 @@ function HomePage() {
         {/* <TopWeeklyProducts /> */}
       </div>
 
-      <div className="new-products border min-h-87.5 grid-cols-1">
+      <div className="new-products  min-h-87.5 grid-cols-1">
         <div className="grid md:grid-cols-[1fr_4fr]  lg:grid-cols-[1fr_5fr] py-2">
           <div className=" hidden p-1 md:flex  justify-center items-center  bg-bg rounded-2xl">
             <div className="border  p-1 lg:p-2 w-full border-lightback grid grid-cols-[1fr_2fr] flex-col justify-center items-center h-full rounded-2xl hover:bg-lightback cursor-pointer">
@@ -378,28 +377,8 @@ function HomePage() {
           </div>
         </div>
         {/* ----swiper---- */}
-        <div className="bg-cyan-500 h-80 py-1">
-          <div className="max-w-90 h-full bg-bg rounded-2xl">
-            <NewProductCard
-              subjectbrand="کودک و نوجوان"
-              offer={8}
-              imgsrc={short}
-              headers={
-                <p className="text-[14px]">
-                  <span className="font-semibold text-muted">
-                    شلوارک مردانه
-                  </span>{" "}
-                  <br className=" flex md:hidden" /> <span>Amahi AU2883</span>
-                </p>
-              }
-              price={
-                <h3 dir="rtl" className="font-semibold">
-                  250,000 تومان
-                </h3>
-              }
-              button={<MainBtn text="افزودن به سبد خرید" />}
-            />
-          </div>
+        <div className=" h-80 py-1">
+          <NewProductsSwiper />
         </div>
         {/* ----swiper---- */}
         <div className="flex md:hidden py-1">
@@ -414,7 +393,9 @@ function HomePage() {
         </div>
       </div>
 
-      <div className="test-final mt-50  grid grid-cols-1"></div>
+      <div className="best-categories border my-25 ">
+        <Bestcategories />
+      </div>
     </section>
   );
 }

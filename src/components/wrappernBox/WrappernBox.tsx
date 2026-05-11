@@ -13,7 +13,7 @@ export default function WrappernBox({
 }: WrappernProps) {
   return (
     <div
-      className={` ${classname} transition-shadow  hover:shadow-[0_8px_24px_-6px_rgba(0,0,0,0.8)] duration-500 rounded-2xl p-2 shadow-[0_8px_24px_-6px_rgba(0,0,0,0.3)]`}
+      className={` transition-shadow  hover:shadow-[0_8px_24px_-6px_rgba(0,0,0,0.8)] duration-500 rounded-2xl p-2 shadow-[0_8px_24px_-6px_rgba(0,0,0,0.3)] ${classname} `}
       style={{ width, height }}
     >
       {children}

@@ -17,7 +17,7 @@ import { FaInstagram } from "react-icons/fa";
 import { CiFacebook } from "react-icons/ci";
 import { FaAppStoreIos } from "react-icons/fa";
 import { FaAndroid } from "react-icons/fa";
-import Icon from "../icon.tsx/Icon";
+import Icon from "../icon/Icon";
 
 export default function Footer() {
   return (

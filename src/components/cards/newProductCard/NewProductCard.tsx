@@ -1,6 +1,6 @@
 // @ component
-import WrappernBox from "../wrappernBox/WrappernBox";
-import OfferNote from "../../components/offerNote/OfferNote";
+import WrappernBox from "../../wrappernBox";
+import OfferNote from "../../offerNote";
 import { Link } from "react-router-dom";
 
 type newProductCard = {
@@ -21,7 +21,7 @@ export default function NewProductCard({
   subjectbrand,
 }: newProductCard) {
   return (
-    <WrappernBox classname="h-full">
+    <WrappernBox classname="h-full border border-lightback shadow-none">
       <div className="cursor-pointer flex flex-col h-full ">
         <div className="relative h-[65%]  w-full border border-lightback rounded-2xl">
           <img
@@ -31,7 +31,7 @@ export default function NewProductCard({
           />
           <div className="absolute top-0 right-0 left-0 p-1 z-50">
             <div className="grid grid-cols-2  ">
-              <OfferNote num={offer} />
+              <div>{offer && <OfferNote num={offer} />}</div>
               <div dir="rtl" className="flex items-center px-2 ">
                 <Link
                   to="#"
