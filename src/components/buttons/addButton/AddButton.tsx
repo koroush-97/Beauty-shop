@@ -6,7 +6,7 @@ type AddButtonProps = {
 
 export default function AddButton({ variant }: AddButtonProps) {
   const renderBlue = () => (
-    <button className="group bg-blue-200 hover:bg-blue-500 flex justify-center items-center rounded-tr-2xl rounded-bl-2xl w-full h-full cursor-pointer">
+    <button className="group bg-blue-200 hover:bg-blue-800 flex justify-center items-center rounded-tr-2xl rounded-bl-2xl w-full h-full cursor-pointer">
       <FaPlus className="text-blue-700 group-hover:text-white transition" />
     </button>
   );
