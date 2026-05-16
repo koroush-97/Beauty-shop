@@ -1,5 +1,5 @@
 type mainBtnprops = {
-  text: string;
+  text: string | React.ReactNode;
 };
 
 export default function MainBtn({ text }: mainBtnprops) {

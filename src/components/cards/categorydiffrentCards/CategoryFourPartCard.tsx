@@ -18,8 +18,8 @@ export default function CategoryFourPartCard({
   description,
 }: CategoryFourPartCardprops) {
   return (
-    <WrappernBox classname=" hover:bg-yellow cursor-pointer w-full md:w-[60%] lg:w-full mx-auto ">
-      <div className="h-full w-full hover:bg-bg grid grid-rows-[minmax(0,75%)_minmax(0,25%)] rounded-2xl duration-500">
+    <WrappernBox classname=" border-10 border-bg hover:border-yellow cursor-pointer w-full md:w-[60%] lg:w-full mx-auto ">
+      <div className="h-full w-full  grid grid-rows-[minmax(0,75%)_minmax(0,25%)] rounded-2xl duration-500">
         <div className=" grid grid-rows-2 w-full  gap-2">
           <div className="grid grid-cols-2 gap-2  w-[80%] mx-auto">
             <div className="flex justify-center items-center h-30 overflow-hidden  p-2">
