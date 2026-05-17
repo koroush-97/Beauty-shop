@@ -10,26 +10,32 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    handle: { title: "خانه" },
     children: [
       {
         index: true,
         element: <HomePage />,
+        handle: { title: "خانه" },
       },
       {
         path: "about",
         element: <AboutPage />,
+        handle: { title: "درباره ما" },
       },
       {
-        path: "Trackorders",
+        path: "track-orders",
         element: <TrackOrders />,
+        handle: { title: "پیگیری سفارشات" },
       },
       {
         path: "weblog",
         element: <WebLog />,
+        handle: { title: "وبلاگ" },
       },
       {
-        path: "callus",
+        path: "call-us",
         element: <CallUs />,
+        handle: { title: "تماس با ما" },
       },
     ],
   },
