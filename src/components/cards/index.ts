@@ -4,3 +4,4 @@ export { default as OfferCard } from "./offercard";
 export { default as CategoryFourPartCard } from "./categorydiffrentCards";
 export { default as ChooseCards } from "./chooseCards";
 export { default as CustomerCard } from "./customerCard";
+export { default as InfoCard } from "./infoCard";
