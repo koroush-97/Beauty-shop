@@ -45,7 +45,7 @@ export default function NavLinks({ setshow, show }: NavLinksProps) {
 
       <li>
         <NavLink
-          to={"/Trackorders"}
+          to={"/track-orders"}
           className={({ isActive }) =>
             isActive ? "nav-link nav-link-active" : "nav-link"
           }
@@ -66,7 +66,7 @@ export default function NavLinks({ setshow, show }: NavLinksProps) {
       </li>
       <li>
         <NavLink
-          to={"/callus"}
+          to={"/call-us"}
           className={({ isActive }) =>
             isActive ? "nav-link nav-link-active" : "nav-link"
           }
