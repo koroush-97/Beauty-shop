@@ -31,7 +31,7 @@ import {
   MainBtn,
   Icon,
   CustomerCard,
-  OfferCard,
+  // OfferCard,
   // OfferProductsSwiper,
 } from "./index";
 
@@ -837,7 +837,7 @@ function HomePage() {
 
       <div className="connect-us min-h-87.5 my-25  grid grid-cols-1 lg:grid-cols-[auto_auto_minmax(0,20%)] gap-x-2 px-1">
         {/* part-one */}
-        <div className="border border-lightback rounded-2xl flex flex-col order-3 lg:order-1">
+        <div className=" rounded-2xl flex flex-col order-3 lg:order-1">
           <div className=" w-full h-40 ">
             <img
               src={map}
@@ -914,7 +914,7 @@ function HomePage() {
           </div>
         </div>
         {/* part three */}
-        <div className="border rounded-xl border-lightback flex-1 p-1 order-1 lg:order-3">
+        <div className="r rounded-xl flex-1 p-1 order-1 lg:order-3">
           <div className="h-full grid grid-cols-1 grid-rows-[auto_auto]  ">
             <div className="w-full h-30 flex justify-center items-center my-10 relative">
               <div className="bg-lightback absolute w-40 h-40 z-40 aspect-square p-3 object-contain  rounded-full"></div>
