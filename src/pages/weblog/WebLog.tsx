@@ -1,3 +1,9 @@
+import { PageTitle } from "../homePage";
+
 export default function WebLog() {
-  return <div className="text-4xl h-screen">WebLog</div>;
+  return (
+    <div className=" h-screen">
+      <PageTitle />
+    </div>
+  );
 }
