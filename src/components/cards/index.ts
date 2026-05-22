@@ -5,3 +5,4 @@ export { default as CategoryFourPartCard } from "./categorydiffrentCards";
 export { default as ChooseCards } from "./chooseCards";
 export { default as CustomerCard } from "./customerCard";
 export { default as InfoCard } from "./infoCard";
+export { default as PostWeblogCard } from "./postwaeblogcard";

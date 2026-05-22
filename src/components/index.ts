@@ -20,3 +20,4 @@ export { default as NewProductsSwiper } from "./Swiper/newProductsSwiper";
 export { default as OfferProductsSwiper } from "./Swiper/offerProductsSwiper";
 export { default as Bestcategories } from "./bestcategories";
 export { default as PageTitle } from "./pagetitle";
+export { default as ComponentLink } from "./ComponentLink";
