@@ -21,3 +21,6 @@ export { default as OfferProductsSwiper } from "./Swiper/offerProductsSwiper";
 export { default as Bestcategories } from "./bestcategories";
 export { default as PageTitle } from "./pagetitle";
 export { default as ComponentLink } from "./ComponentLink";
+export { default as FormInput } from "./forminput";
+export { default as HandledForm } from "./handledform";
+export { default as FormFileUploader } from "./formFileUploader";
