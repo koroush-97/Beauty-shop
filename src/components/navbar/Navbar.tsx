@@ -10,6 +10,7 @@ import NavLinks from "../navlinks/NavLinks";
 import SearchBar from "../searchbar/SearchBar";
 import IconButton from "../buttons/iconBuuton/IconButton";
 import MegaMenuPanel from "../orderhero/MegaMenuPanel";
+import { Link } from "react-router-dom";
 
 // @ hooks
 import { useState, useRef, useEffect } from "react";
@@ -64,14 +65,16 @@ export default function Navbar() {
                 </div>
               </IconButton>
               <IconButton>
-                <div className="flex flex-row gap-2 m-2 justify-center items-center">
-                  {" "}
-                  <div className="p-1.5 rounded-lg bg-lightback">
+                <Link to="/login">
+                  <div className="flex flex-row gap-2 m-2 justify-center items-center">
                     {" "}
-                    <FaUser size={15} color="blue" />
+                    <div className="p-1.5 rounded-lg bg-lightback">
+                      {" "}
+                      <FaUser size={15} color="blue" />
+                    </div>
+                    <span className="text-[10px]">ورود و عضویت</span>{" "}
                   </div>
-                  <span className="text-[10px]">ورود و عضویت</span>{" "}
-                </div>
+                </Link>
               </IconButton>
             </div>
             <div>
