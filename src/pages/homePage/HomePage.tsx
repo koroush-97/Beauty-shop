@@ -65,6 +65,7 @@ import { MdEmail } from "react-icons/md";
 import customer from "../../assets/photo/svgs/customer-review.png";
 import customer1 from "../../assets/photo/svgs/customer-1.png";
 import customer2 from "../../assets/photo/svgs/customer-2.png";
+
 function HomePage() {
   return (
     <section className="relative  main-section h-auto py-2 z-0 ">
@@ -72,7 +73,6 @@ function HomePage() {
         <div className=" absolute w-8 h-8 md:w-10 md:h-10  border-5 border-white rotate-135 rounded-tl-2xl rounded-br-2xl top-28 -right-1.5 bg-[#0f1273] z-50 md:top-65 md:-right-3.5 "></div>{" "}
         <HeroSection classname="p-2  h-70 md:h-150 " />
       </div>
-
       <div className="patronage-section my-25 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-2 gap-x-5 gap-y-2">
         <div className="h-full">
           <WrappernBox classname="h-full">
@@ -115,7 +115,6 @@ function HomePage() {
           </WrappernBox>
         </div>
       </div>
-
       <div className="Category-Section relative  min-h-87.5 md:h-auto z-0  flex justify-center items-center my-25">
         {/* ---layer---- */}
         <div className=" underlayer  bg-lightback md:bg-white absolute -top-5 -bottom-5 right-[20%] left-[20%] md:bottom-0 md:top-0  md:right-0 md:left-0 -z-10 grid grid-cols-1 md:grid-cols-6  rounded-2xl ">
@@ -227,7 +226,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <div className=" topWeekly-Products-Section relative flex min-h-87.5 w-full z-0 my-25 px-2">
         {/* ---overlay--- */}
         <div className=" absolute z-10 top-0 right-0 bottom-0 left-0 grid grid-cols-1 md:grid-cols-4">
@@ -374,7 +372,6 @@ function HomePage() {
         </div>
         {/* <TopWeeklyProducts /> */}
       </div>
-
       <div className="new-products  min-h-87.5 grid-cols-1">
         <div className="grid md:grid-cols-[1fr_4fr]  lg:grid-cols-[1fr_5fr] py-2">
           <div className=" hidden p-1 md:flex  justify-center items-center  bg-bg rounded-2xl">
@@ -427,11 +424,9 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <div className="offers-categories  my-25 ">
         <Bestcategories />
       </div>
-
       <div className=" relative best-categoryes my-25  min-h-87.5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[minmax(0,65%)_minmax(0,35%)]">
         <div className="absolute top-0 right-0 bottom-0 left-0  grid grid-cols-1  md:grid-cols-2  lg:grid-cols-[minmax(0,55%)_minmax(0,45%)]">
           <div className="order-2 lg:order-1 grid">
@@ -514,7 +509,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <div className="By-Category  min-h-87.5 grid-cols-1">
         <div className="grid md:grid-cols-[1fr_4fr]  lg:grid-cols-[1fr_5fr] py-2">
           <div className=" hidden p-1 md:flex  justify-center items-center  bg-bg rounded-2xl">
@@ -590,7 +584,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <div className="choose-products relative  min-h-87.5 grid-cols-1 my-25 ">
         {/* overlay */}
         <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 absolute top-0 right-0 left-0 bottom-0 z-10 ">
@@ -695,7 +688,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <div className="about-beauty relative  min-h-87.5  my-30  grid grid-cols-1   lg:grid-cols-[minmax(0,70%)_minmax(0,30%)]">
         <div
           dir="rtl"
@@ -770,7 +762,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <div className="maanger-shop  min-h-87.5 my-25 grid grid-cols-1 grid-rows-[auto_auto] md:grid-rows-1">
         <div className="  flex items-center justify-center ">
           <div className=" relative h-full  w-full lg:w-[60%]  flex flex-row bg- justify-center items-center">
@@ -834,7 +825,6 @@ function HomePage() {
           </div>
         </div>
       </div>
-
       <div className="connect-us min-h-87.5 my-25  grid grid-cols-1 lg:grid-cols-[auto_auto_minmax(0,20%)] gap-x-2 px-1">
         {/* part-one */}
         <div className=" rounded-2xl flex flex-col order-3 lg:order-1">
@@ -929,7 +919,6 @@ function HomePage() {
         </div>
         {/* part three */}
       </div>
-
       <div className="customer-points min-h-75 my-25  grid  grid-cols-1 lg:grid-cols-[auto_minmax(0,450px)_minmax(0,200px)] gap-y-2 ">
         <div className=" order-3 lg:order-1  grid grid-cols-1 md:grid-cols-2 gap-y-2 h-full items-stretch">
           <CustomerCard
