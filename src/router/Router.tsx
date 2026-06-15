@@ -4,7 +4,10 @@ import AboutPage from "../pages/aboutPage/About";
 import TrackOrders from "../pages/trackorders/TrackOrders";
 import WebLog from "../pages/weblog/WebLog";
 import CallUs from "../pages/callus/CallUs";
+import Test from "../components/test/Test";
 import App from "../App";
+import Login from "../pages/login/Login";
+import SignUp from "../pages/signup/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -37,6 +40,21 @@ export const router = createBrowserRouter([
         element: <CallUs />,
         handle: { title: "تماس با ما" },
       },
+      {
+        path: "test",
+        element: <Test />,
+        handle: { title: "test" },
+      },
     ],
+  },
+  {
+    path: "signup",
+    element: <SignUp />,
+    handle: { title: "ثبت نام" },
+  },
+  {
+    path: "login",
+    element: <Login />,
+    handle: { title: "ورود" },
   },
 ]);
