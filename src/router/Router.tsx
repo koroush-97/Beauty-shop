@@ -8,6 +8,22 @@ import Test from "../components/test/Test";
 import App from "../App";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/signup/SignUp";
+import Basket from "../pages/basket/Basket";
+
+// personal and account
+import Account from "../components/account/Account";
+import UserInfo from "../components/userinfo/UserInfo";
+import UserOrders from "../components/userorders/UserOrders";
+import UserActivitys from "../components/useractivitys/UserActivitys";
+import UserPayments from "../components/userpayments/UserPayments";
+import Wallet from "../components/wallet/Wallet";
+
+// orders routes
+import CancelledProducts from "../components/cancelledproducts/CancelledProducts";
+import ReturtendProducts from "../components/returendproducts/ReturtendProducts";
+import SendProducts from "../components/sendproducts/SendProducts";
+import ProgressProducts from "../components/progressproducts/ProgressProducts";
+import NotFound from "../pages/notfound/NotFound";
 
 export const router = createBrowserRouter([
   {
@@ -56,5 +72,69 @@ export const router = createBrowserRouter([
     path: "login",
     element: <Login />,
     handle: { title: "ورود" },
+  },
+  {
+    path: "basket",
+    element: <Basket />,
+    handle: { title: "سبدخرید" },
+  },
+  {
+    path: "account",
+    element: <Account />,
+    handle: { title: "اکانت" },
+    children: [
+      {
+        index: true,
+        element: <UserInfo />,
+        handle: { title: "اطلاعات حساب کاربری" },
+      },
+      {
+        path: "user-orders",
+        element: <UserOrders />,
+        handle: { title: "لیست سفارشات" },
+        children: [
+          {
+            index: true,
+            element: <ProgressProducts />,
+            handle: { title: "جاری" },
+          },
+          {
+            path: "send-success",
+            element: <SendProducts />,
+            handle: { title: "فرستاده شده " },
+          },
+          {
+            path: "cancelled",
+            element: <CancelledProducts />,
+            handle: { title: "لغو شده" },
+          },
+          {
+            path: "returend",
+            element: <ReturtendProducts />,
+            handle: { title: "مرجوع شده" },
+          },
+        ],
+      },
+      {
+        path: "user-payments",
+        element: <UserPayments />,
+        handle: { title: "تراکنش ها " },
+      },
+      {
+        path: "user-wallet",
+        element: <Wallet />,
+        handle: { title: " کیف پول " },
+      },
+      {
+        path: "user-activity",
+        element: <UserActivitys />,
+        handle: { title: "فعالیت ها" },
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <NotFound />,
+    handle: { title: "404" },
   },
 ]);
