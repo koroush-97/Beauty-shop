@@ -5,8 +5,6 @@ import { type UseFormReturn } from "react-hook-form";
 
 // @ components
 import { HandledForm, FormInput, FormFileUploader } from "../homePage";
-
-import background from "../../assets/photo/login/background.png";
 import logo from "../../assets/photo/login/logo-beauty.png";
 
 type SignUpValues = {
@@ -24,129 +22,134 @@ export default function SignUp() {
     methods: UseFormReturn<SignUpValues>,
   ) => {
     try {
-      console.log("ثبت نام با اطلاعات:", data);
-
+      console.log("ثبت نام:", data);
       toast.success("ثبت نام با موفقیت انجام شد!");
-
       methods.reset();
     } catch (error) {
-      console.log("error", error);
       toast.error("خطایی رخ داد");
+      console.log(error);
     }
   };
 
   return (
     <div
+      className="min-h-screen flex items-center justify-center bg-surface p-4"
       dir="rtl"
-      className="min-h-screen flex justify-center items-center bg-lightback"
-      style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="container border-10 border-yellow bg-white w-full min-h-150 rounded-2xl grid grid-cols-1 lg:grid-cols-[2fr_1fr]">
-        <div className="p-5 bg-white h-auto lg:border-l border-lightback">
-          <HandledForm<SignUpValues>
-            onSubmit={onSubmit}
-            className="w-full h-full gap-y-3 flex flex-col"
-          >
-            <h1 className="text-[16px] lg:text-2xl font-semibold py-2 text-center">
-              لطفا اطلاعات خود را با دقت وارد کنید
-            </h1>
-
-            <div className="flex flex-col px-2 gap-y-2">
-              <label className="font-semibold">نام و نام خانوادگی</label>
-              <FormInput
-                name="fullName"
-                placeholder="نام و نام خانوادگی خود را وارد کنید"
-                rules={{ required: "نام الزامی است" }}
-                className="w-full py-2 px-5 rounded-xl outline-yellow border border-lightback"
-              />
-            </div>
-
-            <div className="flex flex-col px-2 gap-y-2">
-              <label className="font-semibold">ایمیل</label>
-              <FormInput
-                name="email"
-                type="email"
-                placeholder="ایمیل خود را وارد کنید"
-                rules={{
-                  required: "ایمیل الزامی است",
-                  pattern: {
-                    value: /\S+@\S+\.\S+/,
-                    message: "ایمیل نامعتبر است",
-                  },
-                }}
-                className="w-full py-2 px-5 rounded-xl outline-yellow border border-lightback"
-              />
-            </div>
-
-            <div className="flex flex-col px-2 gap-y-2">
-              <label className="font-semibold">شماره تلفن</label>
-              <FormInput
-                name="telephone"
-                type="tel"
-                placeholder="یازده رقم"
-                rules={{
-                  required: "شماره تلفن الزامی است",
-                  pattern: {
-                    value: /^(09|\+989)\d{9}$/,
-                    message: "شماره تلفن معتبر نیست",
-                  },
-                }}
-                className="w-full py-2 px-5 rounded-xl outline-yellow border border-lightback text-right rtl "
-              />
-            </div>
-
-            <div className="flex flex-col px-2 gap-y-2">
-              <label className="font-semibold">آدرس محل سکونت</label>
-              <FormInput
-                name="address"
-                placeholder="آدرس را وارد کنید"
-                rules={{ required: "آدرس الزامی است" }}
-                className="w-full py-2 px-5 rounded-xl outline-yellow border border-lightback"
-              />
-            </div>
-
-            <div className="flex flex-col px-2 gap-y-2">
-              <label className="font-semibold">رمز عبور</label>
-              <FormInput
-                name="password"
-                type="password"
-                placeholder="رمز عبور خود را وارد کنید"
-                rules={{
-                  required: "رمز عبور الزامی است",
-                  minLength: { value: 6, message: "حداقل ۶ کاراکتر" },
-                }}
-                className="w-full py-2 px-5 rounded-xl outline-yellow border border-lightback"
-              />
-            </div>
-
-            <FormFileUploader
-              name="avatar"
-              rules={{ required: "انتخاب عکس پروفایل الزامی است" }}
-            />
-
-            <div className="my-2 h-12 flex flex-col gap-y-2 md:flex-row justify-between items-center">
-              <button
-                type="submit"
-                className="h-full rounded-xl px-5 font-semibold bg-lightback hover:bg-blue-950 hover:text-white duration-300 cursor-pointer"
-              >
-                ارسال اطلاعات
-              </button>
-              <Link
-                to="/"
-                className="text-yellow font-semibold text-[18px] flex flex-row gap-x-2 justify-center items-center"
-              >
-                صفحه اصلی <FaDoorOpen />
-              </Link>
-            </div>
-          </HandledForm>
+      <div className="container max-w-5xl bg-white rounded-3xl shadow-2xl border border-border overflow-hidden grid lg:grid-cols-[1fr_2fr]">
+        {/* بخش برندینگ سمت راست */}
+        <div className="hidden lg:flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/20 p-10 text-center">
+          <img src={logo} alt="logo" className="w-40 mb-6" />
+          <h2 className="text-2xl font-bold text-text">
+            به خانواده بیوتی استایل خوش آمدید
+          </h2>
+          <p className="text-muted mt-4 text-sm leading-6">
+            با عضویت در سایت ما، از تخفیف‌های ویژه و جدیدترین محصولات زیبایی
+            مطلع شوید.
+          </p>
         </div>
 
-        <div className="hidden lg:flex bg-white">
-          <img
-            src={logo}
-            alt="logo"
-            className="-rotate-90 w-full h-full object-contain"
-          />
+        {/* بخش فرم */}
+        <div className="p-8 md:p-12">
+          <div className="mb-8">
+            <h1 className="text-2xl font-bold text-text">
+              ثبت نام در بیوتی استایل
+            </h1>
+            <p className="text-muted text-sm mt-1">مشخصات خود را تکمیل کنید</p>
+          </div>
+
+          <HandledForm<SignUpValues> onSubmit={onSubmit} className="space-y-6">
+            {/* بخش آپلود آواتار */}
+            <div className="flex justify-center mb-8">
+              <FormFileUploader
+                name="avatar"
+                rules={{ required: "انتخاب عکس الزامی است" }}
+                // استایل دهی این بخش در کامپوننت FormFileUploader باید به صورت دایره‌ای باشد
+              />
+            </div>
+
+            {/* گرید فرم */}
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="space-y-1">
+                <label className="text-xs text-muted font-medium pr-1">
+                  نام و نام خانوادگی
+                </label>
+                <FormInput
+                  name="fullName"
+                  placeholder="نام خود را وارد کنید"
+                  rules={{ required: "الزامی است" }}
+                  className="w-full py-3 px-4 rounded-xl border border-border outline-none focus:border-primary"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs text-muted font-medium pr-1">
+                  ایمیل
+                </label>
+                <FormInput
+                  name="email"
+                  type="email"
+                  placeholder="example@mail.com"
+                  rules={{ required: "الزامی است" }}
+                  className="w-full py-3 px-4 rounded-xl border border-border outline-none focus:border-primary"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs text-muted font-medium pr-1">
+                  شماره تلفن
+                </label>
+                <FormInput
+                  name="telephone"
+                  type="tel"
+                  placeholder="09xxxxxxxxx"
+                  rules={{ required: "الزامی است" }}
+                  className="w-full py-3 px-4 rounded-xl border border-border outline-none focus:border-primary"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs text-muted font-medium pr-1">
+                  رمز عبور
+                </label>
+                <FormInput
+                  name="password"
+                  type="password"
+                  placeholder="حداقل 6 کاراکتر"
+                  rules={{ required: "الزامی است" }}
+                  className="w-full py-3 px-4 rounded-xl border border-border outline-none focus:border-primary"
+                />
+              </div>
+            </div>
+
+            {/* فیلد آدرس که تمام عرض است */}
+            <div className="space-y-1">
+              <label className="text-xs text-muted font-medium pr-1">
+                آدرس محل سکونت
+              </label>
+              <FormInput
+                name="address"
+                placeholder="آدرس دقیق..."
+                rules={{ required: "الزامی است" }}
+                className="w-full py-3 px-4 rounded-xl border border-border outline-none focus:border-primary"
+              />
+            </div>
+
+            <div className="flex items-center justify-between pt-4">
+              <Link
+                to="/"
+                className="text-primary flex items-center gap-2 font-semibold"
+              >
+                <FaDoorOpen /> صفحه اصلی
+              </Link>
+              <button
+                type="submit"
+                className="bg-primary text-white py-3 px-8 rounded-xl font-bold hover:bg-primary/90 transition shadow-lg shadow-primary/20"
+              >
+                ثبت نام
+              </button>
+            </div>
+          </HandledForm>
         </div>
       </div>
     </div>
