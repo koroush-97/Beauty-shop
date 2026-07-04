@@ -1,3 +1,10 @@
+import OrdersList from "../OrderList/OrderList";
+
 export default function CancelledProducts() {
-  return <div>CancelledProducts</div>;
+  return (
+    <OrdersList
+      statuses={["cancelled"]}
+      emptyMessage="سفارش لغوشده‌ای ندارید."
+    />
+  );
 }
