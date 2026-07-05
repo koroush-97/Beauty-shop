@@ -14,6 +14,7 @@ import { Link } from "react-router-dom";
 
 // @ hooks
 import { useState, useRef, useEffect } from "react";
+import { useAuth } from "../../hooks/useAuth";
 
 // @ Mock
 import orders from "../../mock/orders";
@@ -21,6 +22,9 @@ import orders from "../../mock/orders";
 export default function Navbar() {
   const [show, isShow] = useState(false);
   const navbarRef = useRef<HTMLDivElement>(null);
+  const { user, isAuthenticated } = useAuth();
+
+  console.log("test auth : =====>", user, isAuthenticated);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -66,18 +70,36 @@ export default function Navbar() {
                   </div>
                 </IconButton>
               </Link>
-              <IconButton>
-                <Link to="/login">
-                  <div className="flex flex-row gap-2 m-2 justify-center items-center">
-                    {" "}
-                    <div className="p-1.5 rounded-lg bg-lightback">
-                      {" "}
-                      <FaUser size={15} color="blue" />
+
+              {isAuthenticated && user ? (
+                <Link to="/account">
+                  <div className="flex items-center gap-2 m-2">
+                    <div className="w-8 h-8 rounded-full bg-lightback flex items-center justify-center text-sm">
+                      <img
+                        src={user.avatar}
+                        alt=""
+                        className="object-cover border w-full h-full rounded-2xl flex justify-center items-center"
+                      />
                     </div>
-                    <span className="text-[10px]">ورود و عضویت</span>{" "}
+                    <span className="text-[10px]">{user.name}</span>
                   </div>
                 </Link>
-              </IconButton>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <IconButton>
+                    <Link to="/login">
+                      <div className="flex flex-row gap-2 m-2 justify-center items-center">
+                        {" "}
+                        <div className="p-1.5 rounded-lg bg-lightback">
+                          {" "}
+                          <FaUser size={15} color="blue" />
+                        </div>
+                        <span className="text-[10px]">ورود و عضویت</span>{" "}
+                      </div>
+                    </Link>
+                  </IconButton>
+                </div>
+              )}
             </div>
             <div>
               <IconButton classname="flex flex-row w-full  p-2 justify-between items-center">
