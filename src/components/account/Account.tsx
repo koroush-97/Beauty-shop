@@ -1,6 +1,14 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
 
 export default function Account() {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
   return (
     <section className="container py-8 md:py-12" dir="rtl">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
@@ -60,6 +68,7 @@ export default function Account() {
               >
                 فعالیت ها
               </NavLink>
+
               <NavLink
                 to="/"
                 className={({ isActive }) =>
@@ -67,8 +76,16 @@ export default function Account() {
                   ${isActive ? "bg-hover text-primary" : "hover:bg-hover"}`
                 }
               >
-                خروج
+                صفحه اصلی
               </NavLink>
+
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="px-4 py-3 rounded-xl text-sm transition text-right bg-red-400 cursor-pointer delay-150 "
+              >
+                خروج
+              </button>
             </nav>
           </div>
         </aside>
