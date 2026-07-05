@@ -38,7 +38,7 @@ export default function SignUp() {
     >
       <div className="container max-w-5xl bg-white rounded-3xl shadow-2xl border border-border overflow-hidden grid lg:grid-cols-[1fr_2fr]">
         {/* بخش برندینگ سمت راست */}
-        <div className="hidden lg:flex flex-col items-center justify-center bg-gradient-to-br from-primary/10 to-secondary/20 p-10 text-center">
+        <div className="hidden lg:flex flex-col items-center justify-center bg-linear-to-br from-primary/10 to-secondary/20 p-10 text-center">
           <img src={logo} alt="logo" className="w-40 mb-6" />
           <h2 className="text-2xl font-bold text-text">
             به خانواده بیوتی استایل خوش آمدید
