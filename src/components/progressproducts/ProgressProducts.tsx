@@ -1,3 +1,10 @@
+import OrdersList from "../OrderList/OrderList";
+
 export default function ProgressProducts() {
-  return <div>ProgressProducts</div>;
+  return (
+    <OrdersList
+      statuses={["processing"]}
+      emptyMessage="سفارش جاری‌ای ندارید."
+    />
+  );
 }
