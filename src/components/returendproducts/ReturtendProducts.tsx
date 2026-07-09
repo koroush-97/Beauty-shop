@@ -1,5 +1,10 @@
-import React from "react";
+import OrdersList from "../OrderList/OrderList";
 
 export default function ReturtendProducts() {
-  return <div>ReturtendProducts</div>;
+  return (
+    <OrdersList
+      statuses={["returned"]}
+      emptyMessage="سفارش مرجوع‌شده‌ای ندارید."
+    />
+  );
 }
