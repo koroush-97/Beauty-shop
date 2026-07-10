@@ -1,3 +1,10 @@
+import OrdersList from "../OrderList/OrderList";
+
 export default function SendProducts() {
-  return <div>SendProducts</div>;
+  return (
+    <OrdersList
+      statuses={["shipped", "delivered"]}
+      emptyMessage="سفارش ارسال‌شده‌ای ندارید."
+    />
+  );
 }
