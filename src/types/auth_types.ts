@@ -3,9 +3,9 @@ export interface User {
   full_name: string;
   email: string;
   role: "user" | "admin" | string;
-  avatar?: string | null;
-  phone?: string | null;
-  password?: string | null;
+  avatar?: string;
+  phone?: string;
+  password?: string;
   created_at?: string;
   updated_at?: string;
 }
@@ -42,7 +42,7 @@ export type UpdateProfileInput = {
   full_name?: string;
   email?: string;
   phone?: string;
-  avatar?: string | File;
+  avatar?: string;
   password?: string;
 };
 
@@ -54,9 +54,10 @@ export interface AuthUser {
   id: number;
   name: string;
   email: string;
-  role: string;
+  role?: string;
   avatar?: string;
   phone?: string;
+  password?: string;
 }
 
 export interface ProfileFormValues {
