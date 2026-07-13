@@ -1,34 +1,65 @@
+import { authService } from "../../services/authService";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import { Link } from "react-router-dom";
 
 import ladylogo from "../../assets/photo/login/lady-img.png";
 import beautyLogo from "../../assets/photo/login/logo-beauty.png";
 
 import { FaDoorOpen } from "react-icons/fa6";
-import { BsTelephoneFill } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 import { IoEyeSharp } from "react-icons/io5";
 
 import type { UseFormReturn } from "react-hook-form";
 import toast from "react-hot-toast";
 
 import { FormInput, HandledForm } from "../homePage";
+import { useAuth } from "../../hooks/useAuth";
 
 type LoginValues = {
-  telephon: string;
+  email: string;
   password: string;
 };
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { setUser } = useAuth();
+
   const onSubmit = async (
     values: LoginValues,
     methods: UseFormReturn<LoginValues>,
   ) => {
     try {
-      console.log(values);
-      toast.success("خوش آمدید");
+      const result = await authService.login(values);
+
+      if (!result.success) {
+        toast.error("ورود ناموفق بود");
+        return;
+      }
+
+      setUser({
+        id: result.user.id,
+        name: result.user.full_name,
+        email: result.user.email,
+        role: result.user.role,
+        avatar: result.user.avatar,
+        phone: result.user.phone,
+        password: result.user.password,
+      });
+
+      toast.success("ورود با موفقیت انجام شد");
       methods.reset();
-    } catch (err) {
-      toast.error("خطا رخ داد");
-      console.log(err);
+      navigate("/");
+    } catch (error: unknown) {
+      console.error("خطای کامل ورود:", error);
+
+      if (axios.isAxiosError<{ message?: string }>(error)) {
+        toast.error(
+          error.response?.data?.message ?? "ایمیل یا رمز عبور اشتباه است",
+        );
+      } else {
+        toast.error("خطای غیرمنتظره‌ای رخ داد");
+      }
     }
   };
 
@@ -36,7 +67,7 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-surface">
       <div className="container grid lg:grid-cols-2 bg-white rounded-3xl overflow-hidden shadow-xl border border-border">
         {/* left side */}
-        <div className="hidden lg:flex flex-col items-center justify-center bg-gradient-to-br from-secondary to-hover relative p-10">
+        <div className="hidden lg:flex flex-col items-center justify-center bg-linear-to-br from-secondary to-hover relative p-10">
           <Link
             to="/"
             className="absolute top-6 right-6 flex items-center gap-2 text-yellow"
@@ -69,24 +100,24 @@ export default function Login() {
           <HandledForm<LoginValues>
             onSubmit={onSubmit}
             defaultValues={{
-              telephon: "",
+              email: "",
               password: "",
             }}
             className="space-y-5"
           >
             {/* phone */}
             <div className="relative">
-              <BsTelephoneFill className="absolute right-4 top-1/2 -translate-y-1/2 text-muted" />
+              <MdEmail className="absolute right-4 top-1/2 -translate-y-1/2 text-muted" />
 
               <FormInput
-                name="telephon"
-                type="text"
-                placeholder="شماره تلفن همراه"
+                name="email"
+                type="email"
+                placeholder="ایمیل"
                 rules={{
-                  required: "شماره تلفن الزامی است",
+                  required: "ایمیل الزامی است",
                   pattern: {
-                    value: /^(09|\+989)\d{9}$/,
-                    message: "شماره معتبر نیست",
+                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                    message: "ایمیل معتبر نیست",
                   },
                 }}
                 className="w-full pr-10 py-3 rounded-xl border border-border focus:border-primary outline-none"
